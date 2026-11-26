@@ -24,7 +24,7 @@ class BankAccount:
             raise TypeError
         self.withdraw(amount)
         other.deposit(amount)
-        self.history.pop()
+        self.history.pop() # this removes the double logging, else we get withdraw and transfer out in history
         other.history.pop()
         self.history.append(("transfer_out", amount))
         other.history.append(("transfer_in", amount))
